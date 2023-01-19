@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@1,700&display=swap");
+
+body{height: 667px;
+    width: 375px;
+   background: #F3F3F3;
+}
+
+
+
+.superior{
+    height: 80px;
+width: 375px;
+display:flex;
+align-items: center;
+background: #FFFFFF;
+position: fixed;
+top: 0;
+left: 0;
+}
+
+.loguol{
+    margin-left: 22px;
+    height: 53px;
+width: 75px;
+}
+.ps{
+    margin-left: 210px;
+    font-size: 40px;
+}
+
+
+.baixa{
+    height: 80px;
+width: 375px;
+background: #FFFFFF;
+display: flex;
+align-items: center;
+position: fixed;
+left: 0;
+bottom: 0;
+}
+.caixa{height: 30px;
+    width: 300px;
+    
+    }
+.caixa input {
+        border: none;
+        outline: none;
+        font-size: 18px;
+        width: 100%;
+    }
+.enviar{
+    font-size: 27px;
+}
