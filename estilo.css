@@ -47,7 +47,21 @@ width: 75px;
     border-radius: 5px; 
     margin-top: 3px;
 }
+.cinza {
+    background: #DCDCDC;
 
+}
+
+.rosa {
+    background: #ffdede;
+
+}
+
+.branca{
+    background: #FFFFFF;
+
+
+}
 .hora{
     margin-left: 3px;
 }
@@ -88,3 +102,4 @@ bottom: 0;
 .enviar{
     font-size: 27px;
 }
+
