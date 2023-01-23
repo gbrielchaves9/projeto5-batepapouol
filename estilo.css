@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@1,700&display=swap");
 
-body{height: 667px;
+body{
     width: 375px;
    background: #F3F3F3;
+   font-family: 'Roboto';
+   height: auto;
 }
+
 
 
 
@@ -26,6 +29,39 @@ width: 75px;
 .ps{
     margin-left: 210px;
     font-size: 40px;
+}
+.sala{
+    margin-top: 85px;
+    width: 100%;
+    margin-bottom: 83px;
+}
+
+.msg{
+    width:375px;
+    background-color:#FFFFFF ;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px; 
+    margin-top: 3px;
+}
+
+.hora{
+    margin-left: 3px;
+}
+.quem{
+    margin-left: 3px;
+}
+.tipo {
+    margin-left: 3px;
+}
+.para {
+    margin-left: 3px;
+}
+.texto{
+    margin-left: 3px;
 }
 
 
