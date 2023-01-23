@@ -21,7 +21,7 @@ function renderiza(){
         const time = msg[i].time;
         if( type === 'status'){
             ul.innerHTML += `
-            <li class="msg cinza">
+            <li class="msg cinza" data-test="message">
             <span class="horario">${time}</span>
             <p>
                 <strong class="quem">${from}</strong>
@@ -31,7 +31,7 @@ function renderiza(){
             ` 
         } else if( type === 'message'){
             ul.innerHTML += `
-             <li class="msg branca">
+             <li class="msg branca" data-test="message">
             <span class="horario">${time}</span>
             <p>
                 <strong class="quem">${from}</strong>
@@ -42,7 +42,7 @@ function renderiza(){
             `
         } else if( type === 'private_message'){
             ul.innerHTML += `
-            <li class="msg rosa ">
+            <li class="msg rosa" data-test="message">
             <span class="horario">${time}</span>
             <p>
                 <strong class="quem">${from}</strong>
@@ -93,6 +93,19 @@ function atualizar(){
     
     promise.then(msgChegaram2);
     promise.catch(deuErroPegarmsg2);
+}
+
+function enviarmsg(){
+    const cavalor = document.querySelector('.enviar').value;
+    const fenviar = {
+        from: usuario,
+        to: user.value,
+	    text: cavalor,
+	    type: "message" 
+    }
+    const promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', fenviar);
+    promise.catch(erroEnviarMensagem);
+    promise.then(sucessoEnviarMensagem);
 }
 
 function renderizar(){
