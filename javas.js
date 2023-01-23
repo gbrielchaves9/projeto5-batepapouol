@@ -273,3 +273,6 @@ coloqueinome();
 setInterval(atualizar,3000);
 }
 renderizar();
+
+
+

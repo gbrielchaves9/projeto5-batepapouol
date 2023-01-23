@@ -96,10 +96,10 @@ function atualizar(){
 }
 
 function enviarmsg(){
-    const cavalor = document.querySelector('.enviar').value;
+    const cavalor = document.querySelector('.editar').value;
     const fenviar = {
         from: usuario,
-        to: user.value,
+        to: msg,
 	    text: cavalor,
 	    type: "message" 
     }
