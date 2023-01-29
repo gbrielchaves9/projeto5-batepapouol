@@ -9,6 +9,8 @@ function dadosChegaram(resposta) {
     msg = resposta.data;
     renderiza();
 }
+
+
 renderiza();
 function renderiza(){   
     const ul = document.querySelector('.sala');
@@ -110,6 +112,16 @@ function enviarmsg(){
 
 function renderizar(){
     usuario = prompt('qual o seu nome?');
+    while(usuario === '' || usuario === null){
+        alert('nome já utilizado , escolha outro nome para bater um papo legal !!')
+        usuario = prompt('qual o seu nome?');
+/* primeiro requisito :
+o while vai repetir o codido enquanto nao tiver um nome valido ou ja em uso , excluimos nome vazio com (=== '')e 
+tiramos o null usando (=== null) junto com o (||) para excluir as 2 opcoes ao mesmo tempo  , o while cria um laço 
+repetindo  o prompt ate satisfazer ambas condicoes .
+a funçao que verifica se o nome ja esta em uso o axios faz mas precisamos montar uma funçao para saber se é esse erro.
+vamos verificar usando a funçao "function coloqueinome()"  */
+    }
 buscarmsg();
 coloqueinome();
 
