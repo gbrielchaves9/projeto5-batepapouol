@@ -34,8 +34,6 @@ function coloqueinome(){
  function msgChegaram(resposta){
     console.log('chegaram!!!!!!');
     console.log(resposta);
-    atualizarasala();
-    setInterval(atualizarasala,5000);
 // se o nome estiver correto e o servidor estiver ok o"status code " é 200 
 }
 atualizarasala();// essa funcao atualiza o bate papo a cada 5s , chamar elae assim que as msg carregarem 
@@ -58,6 +56,7 @@ function atualizar(){
 function msgChegaram2(resposta2){
     console.log('o usuario esta logado');
     console.log(resposta2);
+    
 }
 
 function deuErroPegarmsg2(erro2){
@@ -111,6 +110,7 @@ function renderiza(){
         };
     };
 };
+
 renderiza();
 
 function pergarDados(resposta) { 
@@ -134,6 +134,7 @@ function atualizarasala(){
     const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
     promessa.then(NovaMsg) 
     promessa.then(erroNovaMsg) 
+
 }
 function NovaMsg(recebeu){
     console.log(recebeu)
@@ -145,17 +146,28 @@ function erroNovaMsg(naorecebeu){
 enviar a mmsg !!!
  */
 function enviarmsg(){
-    const cavalor = document.querySelector('.editar').value;
+    const cavalor = document.querySelector('.caixa').value;
     const fenviar = {
         from: usuario,
-        to: msg,
+        to: "Todos",
 	    text: cavalor,
 	    type: "message" 
-    }
+    };
     const promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', fenviar);
     promise.catch(erroEnviarMensagem);
     promise.then(sucessoEnviarMensagem);
 }
+
+function sucessoEnviarMensagem(){
+    console.log(sucessoEnviarMensagem)
+    atualizarasala();
+    pergarDados()
+    setInterval(pergarDados,5000)
+}
+function erroEnviarMensagem(){
+    console.log(erroEnviarMensagem)
+}
+
 
 
 
