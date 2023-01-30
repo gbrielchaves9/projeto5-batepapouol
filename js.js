@@ -111,7 +111,6 @@ function renderiza(){
     };
 };
 
-renderiza();
 
 function pergarDados(resposta) { 
     console.log(resposta)
@@ -146,16 +145,19 @@ function erroNovaMsg(naorecebeu){
 enviar a mmsg !!!
  */
 function enviarmsg(){
-    const cavalor = document.querySelector('.caixa').value;
+    const cavalor = document.querySelector('.caixa')
     const fenviar = {
         from: usuario,
         to: "Todos",
-	    text: cavalor,
+	    text: cavalor.value,
 	    type: "message" 
+
     };
     const promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', fenviar);
     promise.catch(erroEnviarMensagem);
     promise.then(sucessoEnviarMensagem);
+
+    cavalor.value = '';
 }
 
 function sucessoEnviarMensagem(){
@@ -166,6 +168,7 @@ function sucessoEnviarMensagem(){
 }
 function erroEnviarMensagem(){
     console.log(erroEnviarMensagem)
+    alert('voce saiu da sala !')
 }
 
 
